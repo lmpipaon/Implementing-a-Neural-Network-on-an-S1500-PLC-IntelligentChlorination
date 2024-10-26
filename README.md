@@ -1,2 +1,2 @@
 # my_Building_AI_proyet
-Building AI course proyet
+Building AI Course Project
