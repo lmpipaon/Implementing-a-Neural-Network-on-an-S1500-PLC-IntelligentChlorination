@@ -4,11 +4,11 @@ Copy the template, paste it to your GitHub README and edit! -->
 
 # Project Title
 
-Final project for the Building AI course
+Smart-Chlorination
 
 ## Summary
 
-Describe briefly in 2-3 sentences what your project is about. About 250 characters is a nice length! 
+Predict the signal required for sodium hypochlorite dosing pumps in a drinking water treatment plant to achieve the desired free chlorine level after 10 minutes of contact with water, based on the characteristics of the incoming water.
 
 
 ## Background
