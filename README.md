@@ -7,7 +7,7 @@ Copy the template, paste it to your GitHub README and edit! -->
 
 ## Summary
 
-Predict the pulse frequency required for sodium hypochlorite dosing pumps in a drinking water treatment plant to achieve the desired free chlorine level after 10 minutes of contact, based on the characteristics of the incoming water.
+Predict the pulse frequency required for sodium hypochlorite dosing pumps in a drinking water treatment plant to achieve the desired free chlorine level after 10 minutes of contact, considering the characteristics of the incoming water.
 
 
 ## Background
