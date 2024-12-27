@@ -12,7 +12,7 @@ Predict the pulse frequency required for sodium hypochlorite dosing pumps in a d
 
 ## Background
 
-In water treatment plants, using a classic PID (Proportional-Integral-Derivative) controller to regulate the free chlorine level is common. However, a 10-minute delay between dosing and measurement can cause several problems:
+In water treatment plants, using a classic PID (Proportional-Integral-Derivative) controller to regulate the free chlorine level is common. However, a delay between dosing and measurement can cause several problems:
 
 Response Delay: The PID controller may react incorrectly due to the delay. If the system takes 10 minutes to measure the effect of dosing, the controller might overcompensate or undercompensate, causing fluctuations in the chlorine level.
 
@@ -28,6 +28,10 @@ To mitigate these issues, strategies such as using predictive models to anticipa
 
 
 ## How is it used?
+
+The aim of this project is to implement an artificial intelligence (AI)-based solution to precisely predict the pulse frequency (rate pulse) of sodium hypochlorite dosing pumps in the water treatment plant. This solution uses predictive models to anticipate the impact of dosing before it is measured, considering the characteristics of the incoming water and the inherent feedback delay.
+Although the PID controller will remain in a closed loop, its main function will be compensatory, making secondary adjustments to the free chlorine level. The accuracy of control will primarily depend on the predictive AI, which will reduce fluctuations and oscillations in the system and improve the overall stability of the dosing process.
+The intention of this project is to improve the efficiency, precision, and stability of chlorine level control in treated water, ensuring a faster and more adaptive response to changing water conditions, optimizing the use of chemicals, and minimizing manual intervention and the risk of errors.
 
 Describe the process of using the solution. In what kind situations is the solution needed (environment, time, etc.)? Who are the users, what kinds of needs should be taken into account?
 
