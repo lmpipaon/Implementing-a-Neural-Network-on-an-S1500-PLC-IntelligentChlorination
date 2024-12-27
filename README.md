@@ -12,12 +12,19 @@ Predict the pulse frequency required for sodium hypochlorite dosing pumps in a d
 
 ## Background
 
-Which problems does your idea solve? How common or frequent is this problem? What is your personal motivation? Why is this topic important or interesting?
+In water treatment plants, using a classic PID (Proportional-Integral-Derivative) controller to regulate the free chlorine level is common. However, a 10-minute delay between dosing and measurement can cause several problems:
 
-This is how you make a list, if you need one:
-* problem 1
-* problem 2
-* etc.
+Response Delay: The PID controller may react incorrectly due to the delay. If the system takes 10 minutes to measure the effect of dosing, the controller might overcompensate or undercompensate, causing fluctuations in the chlorine level.
+
+Oscillations: The delay can induce oscillations in the system. The PID controller might adjust dosing based on outdated data, leading to a cycle of over-adjustments and under-adjustments.
+
+Inaccurate Control: The precision of controlling the chlorine level is compromised. The goal is to maintain a constant free chlorine level, but with a significant delay, achieving precise and stable control is difficult.
+
+Risk of Under-dosing or Over-dosing: A prolonged delay can result in unsafe chlorine levels. Under-dosing may not completely eliminate pathogens, while over-dosing can lead to chlorine levels that are harmful to health and the environment.
+
+Frequent Manual Adjustments: Operators may need to intervene manually more often to correct chlorine levels, increasing workload and the risk of human error.
+
+To mitigate these issues, strategies such as using predictive models to anticipate the effect of dosing before it is measured, or adjusting the PID parameters to account for the delay, can be implemented.
 
 
 ## How is it used?
