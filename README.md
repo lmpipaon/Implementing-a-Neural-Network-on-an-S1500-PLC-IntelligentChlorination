@@ -8,7 +8,9 @@ Final project for the Building AI course
 
 ## Summary
 
-Predict the pulse frequency required for sodium hypochlorite dosing pumps in a drinking water treatment plant to achieve the desired free chlorine level after 10 minutes of contact, considering the characteristics of the incoming water.
+This project aims to predict the pulse rate of a chlorine dosing pump in a drinking water treatment plant based on water characteristics. An AI-based model will be developed to calculate the required pulse frequency with precision.
+
+The model will be integrated into a Siemens S1500 PLC to enable real-time data processing and automated pump control, ensuring efficient and accurate chlorine dosing.
 
 
 ## Background
