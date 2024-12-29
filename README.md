@@ -8,18 +8,17 @@ Final project for the Building AI course
 
 ## Summary
 
-This project aims to predict the pulse rate of a chlorine dosing pump in a drinking water treatment plant based on water characteristics. An AI-based model will be developed to calculate the required pulse frequency with precision.
+This project focuses on predicting the pulse rate of a chlorine dosing pump in a drinking water treatment plant based on water characteristics. An AI-driven model will be developed to accurately calculate the required pulse frequency.
 
-The model will be integrated into a Siemens S1500 PLC to enable real-time data processing and automated pump control, ensuring efficient and accurate chlorine dosing.
-
+The model will be deployed on a Siemens S1500 PLC to facilitate real-time data processing and automated pump control, ensuring precise and efficient chlorine dosing.
 
 ## Background
 
-In water treatment plants, maintaining the free chlorine level is often controlled using a classic PID (Proportional-Integral-Derivative) controller. However, the process requires a contact time between the chlorine dosing and the measurement of free chlorine in the water to ensure proper disinfection. This mandatory contact time introduces a delay in the control loop, leading to potential challenges such as instability, oscillations, or overshooting in the chlorine dosing process. These issues can compromise water quality and dosing efficiency.
+In water treatment plants, maintaining free chlorine levels is commonly managed using a classic PID (Proportional-Integral-Derivative) controller. However, the process requires a specific contact time between chlorine dosing and the measurement of free chlorine to ensure proper disinfection. This introduces a delay in the control loop, which can result in challenges such as instability, oscillations, or overshooting, potentially compromising water quality and dosing efficiency.
 
-The aim of this project is to implement an artificial intelligence (AI)-based solution to precisely predict the pulse frequency (rate pulse) of sodium hypochlorite dosing pumps in the water treatment plant. Although the PID controller will remain in a closed loop, its main function will be compensatory, making secondary adjustments to the free chlorine level. The accuracy of control will primarily depend on the predictive AI, which will reduce fluctuations and oscillations in the system and improve the overall stability of the dosing process.
+This project aims to implement an artificial intelligence (AI)-based solution to predict the pulse frequency of sodium hypochlorite dosing pumps with high precision. While the PID controller will remain part of the closed loop, its role will shift to compensatory adjustments, focusing on fine-tuning the free chlorine level. By relying on predictive AI, the system will reduce fluctuations and enhance the stability of the dosing process.
 
-It is possible to use linear regression for this task, but a small neural network can account for the breakpoint in chlorination and other non-linearities.
+Although linear regression could be used for this task, a small neural network is better suited to capture the breakpoint in chlorination and address non-linear behaviors effectively.
 
 
 ## How is it used?
