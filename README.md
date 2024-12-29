@@ -15,17 +15,7 @@ The model will be integrated into a Siemens S1500 PLC to enable real-time data p
 
 ## Background
 
-In water treatment plants, using a classic PID (Proportional-Integral-Derivative) controller to regulate the free chlorine level is common. However, a delay between dosing and measurement can cause several problems:
-
-**Response Delay:** The PID controller may react incorrectly due to the delay. If the system takes 10 minutes to measure the effect of dosing, the controller might overcompensate or undercompensate, causing fluctuations in the chlorine level.
-
-**Oscillations:** The delay can induce oscillations in the system. The PID controller might adjust dosing based on outdated data, leading to a cycle of over-adjustments and under-adjustments.
-
-**Inaccurate Control:** The precision of controlling the chlorine level is compromised. The goal is to maintain a constant free chlorine level, but with a significant delay, achieving precise and stable control is difficult.
-
-**Risk of Under-dosing or Over-dosing:** A prolonged delay can result in unsafe chlorine levels. Under-dosing may not completely eliminate pathogens, while over-dosing can lead to chlorine levels that are harmful to health and the environment.
-
-**Frequent Manual Adjustments:** Operators may need to intervene manually more often to correct chlorine levels, increasing workload and the risk of human error.
+In water treatment plants, maintaining the free chlorine level is often controlled using a classic PID (Proportional-Integral-Derivative) controller. However, the process requires a contact time between the chlorine dosing and the measurement of free chlorine in the water to ensure proper disinfection. This mandatory contact time introduces a delay in the control loop, leading to potential challenges such as instability, oscillations, or overshooting in the chlorine dosing process. These issues can compromise water quality and dosing efficiency.
 
 
 ## How is it used?
