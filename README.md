@@ -17,13 +17,13 @@ The model will be integrated into a Siemens S1500 PLC to enable real-time data p
 
 In water treatment plants, maintaining the free chlorine level is often controlled using a classic PID (Proportional-Integral-Derivative) controller. However, the process requires a contact time between the chlorine dosing and the measurement of free chlorine in the water to ensure proper disinfection. This mandatory contact time introduces a delay in the control loop, leading to potential challenges such as instability, oscillations, or overshooting in the chlorine dosing process. These issues can compromise water quality and dosing efficiency.
 
+The aim of this project is to implement an artificial intelligence (AI)-based solution to precisely predict the pulse frequency (rate pulse) of sodium hypochlorite dosing pumps in the water treatment plant. Although the PID controller will remain in a closed loop, its main function will be compensatory, making secondary adjustments to the free chlorine level. The accuracy of control will primarily depend on the predictive AI, which will reduce fluctuations and oscillations in the system and improve the overall stability of the dosing process.
+
+It is possible to use linear regression for this task, but a small neural network can account for the breakpoint in chlorination and other non-linearities.
+
 
 ## How is it used?
 
-The aim of this project is to implement an artificial intelligence (AI)-based solution to precisely predict the pulse frequency (rate pulse) of sodium hypochlorite dosing pumps in the water treatment plant.
-Although the PID controller will remain in a closed loop, its main function will be compensatory, making secondary adjustments to the free chlorine level. The accuracy of control will primarily depend on the predictive AI, which will reduce fluctuations and oscillations in the system and improve the overall stability of the dosing process.
-
-It is possible to use linear regression for this task, but a small neural network can account for the breakpoint in chlorination and other non-linearities.
 
 
 
