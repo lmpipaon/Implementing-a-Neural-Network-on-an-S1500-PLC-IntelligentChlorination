@@ -8,15 +8,15 @@ Final project for the Building AI course
 
 ## Summary
 
-This project focuses on predicting the pulse rate of a chlorine dosing pump in a drinking water treatment plant based on water characteristics. An AI-driven model will be developed to accurately calculate the required pulse frequency.
+This project focuses on predicting the pulse rate of a chlorine dosing pump in a drinking water treatment plant based on water characteristics. An AI model will be developed to calculate the required pulse frequency.
 
-The model will be deployed on a Siemens S1500 PLC to facilitate real-time data processing and automated pump control, ensuring precise and efficient chlorine dosing.
+The model will be deployed on a Siemens S1500 PLC to facilitate real-time data processing and automated pump control.
 
 ## Background
 
 In water treatment plants, maintaining free chlorine levels is commonly managed using a classic PID (Proportional-Integral-Derivative) controller. However, the process requires a specific contact time between chlorine dosing and the measurement of free chlorine to ensure proper disinfection. This introduces a delay in the control loop, which can result in challenges such as instability, oscillations, or overshooting, potentially compromising water quality and dosing efficiency.
 
-This project aims to implement an artificial intelligence (AI)-based solution to predict the pulse frequency of sodium hypochlorite dosing pumps with high precision. While the PID controller will remain part of the closed loop, its role will shift to compensatory adjustments, focusing on fine-tuning the free chlorine level. By relying on predictive AI, the system will reduce fluctuations and enhance the stability of the dosing process.
+This project aims to implement an artificial intelligence based solution to predict the pulse frequency of sodium hypochlorite dosing pumps. While the PID controller will remain part of the closed loop, its role will shift to compensatory adjustments, focusing on fine-tuning the free chlorine level. By relying on predictive AI, the system will reduce fluctuations and enhance the stability of the dosing process.
 
 Although linear regression could be used for this task, a small neural network is better suited to capture the breakpoint in chlorination and address non-linear behaviors effectively.
 
