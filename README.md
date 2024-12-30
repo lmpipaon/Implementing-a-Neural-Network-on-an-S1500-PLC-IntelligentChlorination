@@ -21,7 +21,8 @@ This project aims to implement an artificial intelligence based solution to pred
 Although linear regression could be used for this task, a small neural network is better suited to capture the breakpoint in chlorination and address non-linear behaviors effectively.
 
 
-## How is it used?
+## The Treatment Plant
+# The Treatment Plant
 
 ![diagram](./images/treatment_plant_diagram.jpg)
 
