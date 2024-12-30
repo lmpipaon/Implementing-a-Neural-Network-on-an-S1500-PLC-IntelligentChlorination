@@ -23,9 +23,27 @@ Although linear regression could be used for this task, a small neural network i
 
 ## How is it used?
 
-![Imagen 1](./images/treatment_plant_diagram.jpg)
+![diagram](./images/treatment_plant_diagram.jpg)
 
+¡Gracias por la aclaración! Para expresar correctamente que hay dos bombas y que tienes datos sobre cuál de las dos está funcionando, una mejor opción sería:
 
+"Status of the dosing pumps (which one is operating)"
+Aquí tienes la versión completa revisada:
+
+The treatment process begins with the dosing of coagulant, followed by filtration of the water. After that, the water undergoes ultraviolet (UV) treatment, and finally, it is chlorinated.
+
+We monitor several parameters throughout the process, including:
+
+Turbidity of raw water
+PPM of coagulant
+UV percentage
+Status of the dosing pumps (which one is operating)
+Hypochlorite tank level
+pH levels
+Free chlorine
+Chlorine setpoint
+
+## Input Features
 ## Data sources and AI methods
 Where does your data come from? Do you collect it yourself or do you use data collected by someone else?
 If you need to use links, here's an example:
