@@ -32,11 +32,12 @@ We monitor several parameters throughout the process, including:
 - Turbidity of raw water
 - PPM of coagulant
 - UV percentage
-- Status of the dosing pumps (which one is operating)
+- Which dosing pump is operating
 - Hypochlorite tank level
 - pH levels
 - Free chlorine
 - Chlorine setpoint
+- Turbidity of treated water
 
 ## Input Features
 ## Data sources and AI methods
