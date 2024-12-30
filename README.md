@@ -23,7 +23,7 @@ Although linear regression could be used for this task, a small neural network i
 
 ## How is it used?
 
-![Imagen 1](./images/imagen1.png)
+![Imagen 1](./images/treatment_plant_diagram.jpg)
 
 
 ## Data sources and AI methods
