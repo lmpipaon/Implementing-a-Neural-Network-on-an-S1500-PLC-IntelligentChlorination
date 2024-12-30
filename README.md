@@ -29,14 +29,14 @@ The treatment process begins with the dosing of coagulant, followed by filtratio
 
 We monitor several parameters throughout the process, including:
 
-Turbidity of raw water
-PPM of coagulant
-UV percentage
-Status of the dosing pumps (which one is operating)
-Hypochlorite tank level
-pH levels
-Free chlorine
-Chlorine setpoint
+-Turbidity of raw water
+-PPM of coagulant
+-UV percentage
+-Status of the dosing pumps (which one is operating)
+-Hypochlorite tank level
+-pH levels
+-Free chlorine
+-Chlorine setpoint
 
 ## Input Features
 ## Data sources and AI methods
