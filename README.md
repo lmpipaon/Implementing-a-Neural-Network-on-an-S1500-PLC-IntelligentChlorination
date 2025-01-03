@@ -23,7 +23,7 @@ Although linear regression could be used for this task, a small neural network i
 
 ## The Treatment Plant
 
-![diagram](./images/treatment_plant_diagram.jpg)
+![treatment_plant_diagram](./images/treatment_plant_diagram.jpg)
 
 The treatment process begins with the dosing of coagulant, followed by filtration of the water. After that, the water undergoes ultraviolet (UV) treatment, and finally, it is chlorinated.
 
@@ -65,6 +65,8 @@ To address these problems, I tried a different filtering method. Instead of disc
 The chosen neural network architecture will be simple to facilitate easy implementation on a Siemens S1500 PLC. I will experiment with 9 input features, a hidden layer with 6 neurons using a ReLU (Rectified Linear Unit) activation function, which is straightforward to implement. The output layer will consist of a single neuron without an activation function, allowing for continuous output across the full range.
 
 This design aims to be both efficient and compatible with the constraints of the PLC system, ensuring the neural network can be deployed and run in a real-time environment.
+
+![NeuralNetworkDiagram](./images/NeuralNetworkDiagram.png)
 
 ## What next?
 
