@@ -39,6 +39,7 @@ We monitor several parameters throughout the process, including:
 - Chlorine setpoint
 - Turbidity of treated water
 - Flow rate
+- Free chlorine treated water
 
 ## Input Features
 ## Data sources and AI methods
