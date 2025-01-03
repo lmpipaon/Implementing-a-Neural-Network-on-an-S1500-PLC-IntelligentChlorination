@@ -52,7 +52,7 @@ At first, I filtered the data by discarding entries where the difference between
 To address these problems, I tried a different filtering method. Instead of discarding only the data where the difference between the setpoint and the measured value was greater than 1%, I also removed all entries where such differences occurred in the 5 readings before and after the current entry. This approach aimed to retain only the data that more accurately captured the relationship between water parameters and the pulse rate of the pumps.
 
 ## Data Format Description
-The data used in this project is stored in a .csv file. The structure of the file is as follows:
+The dataset is stored in a .csv file with a total of 8,463 rows, including the header row. The structure of the file is as follows:
 
 | Pulses | TankLvl | ClSet | Pump | UV%   | Flow  | InfTurb | EffTurb | pH   | CoagPPM |
 |--------|---------|-------|------|-------|-------|---------|---------|------|---------|
@@ -82,15 +82,3 @@ This design aims to be both efficient and compatible with the constraints of the
 
 ![NeuralNetworkDiagram](./images/NeuralNetworkDiagram.png)
 
-## What next?
-
-How could your project grow and become something even more? What kind of skills, what kind of assistance would you  need to move on? 
-
-
-## Acknowledgments
-
-* list here the sources of inspiration 
-* do not use code, images, data etc. from others without permission
-* when you have permission to use other people's materials, always mention the original creator and the open source / Creative Commons licence they've used
-  <br>For example: [Sleeping Cat on Her Back by Umberto Salvagnin](https://commons.wikimedia.org/wiki/File:Sleeping_cat_on_her_back.jpg#filelinks) / [CC BY 2.0](https://creativecommons.org/licenses/by/2.0)
-* etc
