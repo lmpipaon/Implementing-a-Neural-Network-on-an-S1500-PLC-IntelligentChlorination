@@ -58,6 +58,12 @@ To address these problems, I tried a different filtering method. Instead of disc
 |   a     |         |         |         |         |         |         |         |         |         |
 
 
+| Output values | Input features 1 | Input features 2 | Input features 3 | Input features 4 | Input features 5 | Input features 6 | Input features 7 | Input features 8 | Input features 9 |
+|---------------|------------------|------------------|------------------|------------------|------------------|------------------|------------------|------------------|------------------|
+|               | Feature 1        | Feature 2        | Feature 3        | Feature 4        | Feature 5        | Feature 6        | Feature 7        | Feature 8        | Feature 9        |
+
+
+
 
 ## Challenges
 
