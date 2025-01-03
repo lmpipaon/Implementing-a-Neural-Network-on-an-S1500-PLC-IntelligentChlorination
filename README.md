@@ -47,12 +47,7 @@ We have an extensive dataset, with measurements recorded every 2 minutes over se
 
 ### Data Filtering
 1. Initial Data Filtering:
-At first, I filtered the data by discarding entries where the difference between the setpoint (desired free chlorine) and the measurement (measured free chlorine) was greater than 1% of the setpoint value. I then trained the neural network with the remaining data (as I will explain later). However, the data wasn't good enough, which led to convergence problems during training, such as:
-
-Unstable learning: The model failed to improve consistently.
-Overfitting: The network performed well on the training data but poorly on unseen data.
-Poor generalization: Performance on new, unseen data was subpar.
-These issues are common when the data isn't precise, consistent, or relevant enough, which suggested that the initial filtering approach might not have been sufficient.
+At first, I filtered the data by discarding entries where the difference between the setpoint (desired free chlorine) and the measurement (measured free chlorine) was greater than 1% of the setpoint value. I then trained the neural network with the remaining data (as I will explain later). However, the data wasn't good enough, which led to convergence problems during training.
 
 2. Alternative Data Filtering Approach:
 To address these problems, I tried a different filtering method. Instead of discarding only the data where the difference between the setpoint and the measured value was greater than 1%, I also removed all entries where such differences occurred in the 5 readings before and after the current entry. This approach aimed to retain only the data that more accurately captured the relationship between water parameters and the pulse rate of the pumps.
