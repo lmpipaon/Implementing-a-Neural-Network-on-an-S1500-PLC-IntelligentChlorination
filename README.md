@@ -54,9 +54,6 @@ To address these problems, I tried a different filtering method. Instead of disc
 ## Data Format Description
 The data used in this project is stored in a .csv file. The structure of the file is as follows:
 
-**First Column:** Represents the output of the neural network. This is the target variable the network is trained to predict.
-**Next 9 Columns:** Represent the input features for the neural network. These features are used as inputs during training and prediction.
-
 | Pulses | TankLvl | ClSet | Pump | UV%   | Flow  | InfTurb | EffTurb | pH   | CoagPPM |
 |--------|---------|-------|------|-------|-------|---------|---------|------|---------|
 | 53.55  | 64.87   | 0.7   | 1    | 31.37 | 88.28 | 1.81    | 0.88    | 9.21 | 0       |
