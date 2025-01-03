@@ -67,15 +67,15 @@ The data used in this project is stored in a .csv file. The structure of the fil
 
 - **The first column:** (Output) represents the pump pulses This is the target variable the network is trained to predict.
 - The next 9 columns (Feature1 to Feature9) correspond to the input features:
-- **Feature1:** Hypo. tank level
-- **Feature2:** Chlorine setpoint
-- **Feature3:** Dosing pump
-- **Feature4:** UV percentage
-- **Feature5:** Flow
-- **Feature6:** Influent turbidity
-- **Feature7:** Effluent turbidity
-- **Feature8:** pH
-- **Feature9:** Coagulant PPM
+-- **Feature1:** Hypo. tank level
+-- **Feature2:** Chlorine setpoint
+-- **Feature3:** Dosing pump
+-- **Feature4:** UV percentage
+-- **Feature5:** Flow
+-- **Feature6:** Influent turbidity
+-- **Feature7:** Effluent turbidity
+-- **Feature8:** pH
+-- **Feature9:** Coagulant PPM
 
 ## Neural Network Structure
 
