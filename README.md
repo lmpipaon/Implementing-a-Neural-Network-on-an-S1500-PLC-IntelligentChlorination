@@ -53,9 +53,9 @@ To address these problems, I tried a different filtering method. Instead of disc
 
 ## Input Features
 
-| Output  | Input 1 | Input 2 | Input 3 | Input 4 | Input 5 | Input 6 | Input 7 | Input 8 | Inpu 9 |
-|---------|---------|---------|---------|---------|---------|---------|---------|------------------|
-|   a     |         |         |         |         |         |         |         |         |        |
+| Output  | Input 1 | Input 2 | Input 3 | Input 4 | Input 5 | Input 6 | Input 7 | Input 8 | Input 9 |
+|---------|---------|---------|---------|---------|---------|---------|---------|-------------------|
+|   a     |         |         |         |         |         |         |         |         |         |
 
 
 
