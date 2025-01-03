@@ -41,7 +41,6 @@ We monitor several parameters throughout the process, including:
 - Flow rate
 - Free chlorine treated water
 
-## Input Features
 ## Data sources
 We have an extensive dataset, with measurements recorded every 2 minutes over several years, including the parameters mentioned earlier. However, careful filtering is required to select only the data that can effectively train the neural network.
 
@@ -51,6 +50,13 @@ At first, I filtered the data by discarding entries where the difference between
 
 2. Alternative Data Filtering Approach:
 To address these problems, I tried a different filtering method. Instead of discarding only the data where the difference between the setpoint and the measured value was greater than 1%, I also removed all entries where such differences occurred in the 5 readings before and after the current entry. This approach aimed to retain only the data that more accurately captured the relationship between water parameters and the pulse rate of the pumps.
+
+## Input Features
+
+| Output  | Input 1 | Input 2 | Input 3 | Input 4 | Input 5 | Input 6 | Input 7 | Input 8 | Inpu 9 |
+|---------|---------|---------|---------|---------|---------|---------|---------|------------------|
+|         |         |         |         |         |         |         |         |         |        |
+
 
 ## Challenges
 
