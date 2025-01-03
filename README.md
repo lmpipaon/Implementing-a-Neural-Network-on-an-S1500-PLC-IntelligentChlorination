@@ -51,6 +51,11 @@ At first, I filtered the data by discarding entries where the difference between
 2. Alternative Data Filtering Approach:
 To address these problems, I tried a different filtering method. Instead of discarding only the data where the difference between the setpoint and the measured value was greater than 1%, I also removed all entries where such differences occurred in the 5 readings before and after the current entry. This approach aimed to retain only the data that more accurately captured the relationship between water parameters and the pulse rate of the pumps.
 
+## Data Format Description
+The data used in this project is stored in a .csv file. The structure of the file is as follows:
+
+**First Column:** Represents the output of the neural network. This is the target variable the network is trained to predict.
+**Next 9 Columns:** Represent the input features for the neural network. These features are used as inputs during training and prediction.
 
 | Pulses | TankLvl | ClSet | Pump | UV%   | Flow  | InfTurb | EffTurb | pH   | CoagPPM |
 |--------|---------|-------|------|-------|-------|---------|---------|------|---------|
@@ -60,6 +65,17 @@ To address these problems, I tried a different filtering method. Instead of disc
 | 56.36  | 69.62   | 0.7   | 1    | 32.24 | 90.47 | 0.69    | 0.39    | 8.79 | 0       |
 | ...    | ...     | ...   | ...  | ...   | ...   | ...     | ...     | ...  | ...     |
 
+**The first column:** (Output) represents the pump pulses This is the target variable the network is trained to predict.
+The next 9 columns (Feature1 to Feature9) correspond to the input features:
+**Feature1:** Hypo. tank level
+**Feature2:** Chlorine setpoint
+**Feature3:** Dosing pump
+**Feature4:** UV percentage
+**Feature5:** Flow
+**Feature6:** Influent turbidity
+**Feature7:** Effluent turbidity
+**Feature8:** pH
+**Feature9:** Coagulant PPM
 
 ## Neural Network Structure
 
