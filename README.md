@@ -42,10 +42,9 @@ We monitor several parameters throughout the process, including:
 - Free chlorine treated water
 
 ## Input Features
-## Data sources and AI methods
-Where does your data come from? Do you collect it yourself or do you use data collected by someone else?
-If you need to use links, here's an example:
-[Twitter API](https://developer.twitter.com/en/docs)
+## Data sources
+We have an extensive dataset, with measurements recorded every 2 minutes over several years, including the parameters mentioned earlier. However, careful filtering is required to select only the data that can effectively train the neural network.
+### cdiidd
 
 | Syntax      | Description |
 | ----------- | ----------- |
