@@ -45,7 +45,7 @@ We monitor several parameters throughout the process, including:
 ## Data sources
 We have an extensive dataset, with measurements recorded every 2 minutes over several years, including the parameters mentioned earlier. However, careful filtering is required to select only the data that can effectively train the neural network.
 
-###Data Filtering
+### Data Filtering
 At first, I filtered the data by discarding entries where the difference between the setpoint (desired free chlorine) and the measurement (measured free chlorine) was greater than 1% of the setpoint value. I then trained the neural network with the remaining data (as I will explain later). However, the data wasn't good enough, which led to convergence problems during training, such as unstable learning, overfitting, or poor generalization. These are common issues when the data isn't precise, consistent, or relevant enough.
 
 ## Challenges
