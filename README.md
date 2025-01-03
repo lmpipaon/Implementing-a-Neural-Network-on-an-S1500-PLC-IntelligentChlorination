@@ -52,14 +52,13 @@ At first, I filtered the data by discarding entries where the difference between
 To address these problems, I tried a different filtering method. Instead of discarding only the data where the difference between the setpoint and the measured value was greater than 1%, I also removed all entries where such differences occurred in the 5 readings before and after the current entry. This approach aimed to retain only the data that more accurately captured the relationship between water parameters and the pulse rate of the pumps.
 
 
-Pulses   ; TankLvl ; ClSet ; Pump ; UV%   ; Flow  ; InfTurb ; EffTurb ; pH   ; CoagPPM
-53.55    ; 64.87   ; 0.7   ; 1    ; 31.37 ; 88.28 ; 1.81    ; 0.88    ; 9.21 ; 0
-58.16    ; 78.75   ; 0.7   ; 1    ; 25.93 ; 96.72 ; 0.61    ; 0.32    ; 8.8  ; 0
-44.44    ; 64.19   ; 0.7   ; 2    ; 35.08 ; 97.81 ; 1.06    ; 0.57    ; 9.06 ; 0
-56.36    ; 69.62   ; 0.7   ; 1    ; 32.24 ; 90.47 ; 0.69    ; 0.39    ; 8.79 ; 0
-........ ; ......  ; ....  ; .... ; ..... ; ..... ; ......  ; ......  ; .... ; ...
-
-
+| Pulses | TankLvl | ClSet | Pump | UV%   | Flow  | InfTurb | EffTurb | pH   | CoagPPM |
+|--------|---------|-------|------|-------|-------|---------|---------|------|---------|
+| 53.55  | 64.87   | 0.7   | 1    | 31.37 | 88.28 | 1.81    | 0.88    | 9.21 | 0       |
+| 58.16  | 78.75   | 0.7   | 1    | 25.93 | 96.72 | 0.61    | 0.32    | 8.8  | 0       |
+| 44.44  | 64.19   | 0.7   | 2    | 35.08 | 97.81 | 1.06    | 0.57    | 9.06 | 0       |
+| 56.36  | 69.62   | 0.7   | 1    | 32.24 | 90.47 | 0.69    | 0.39    | 8.79 | 0       |
+| ...    | ...     | ...   | ...  | ...   | ...   | ...     | ...     | ...  | ...     |
 
 
 ## Neural Network Structure
