@@ -23,7 +23,7 @@ Although linear regression could be used for this task, a small neural network i
 
 ## The Treatment Plant
 
-![treatment_plant_diagram](./images/treatment_plant_diagram.jpg)
+![treatment_plant_diagram](./images/treatment_plant_diagram.png)
 
 The treatment process begins with the dosing of coagulant, followed by filtration of the water. After that, the water undergoes ultraviolet (UV) treatment, and finally, it is chlorinated.
 
