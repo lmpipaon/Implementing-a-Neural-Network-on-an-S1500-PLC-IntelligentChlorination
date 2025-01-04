@@ -2,7 +2,8 @@
 created by Reaktor Innovations and University of Helsinki. 
 Copy the template, paste it to your GitHub README and edit! -->
 
-## Intelligent Chlorination: Implementing a Neural Network on an S1500 PLC
+# Intelligent Chlorination
+## Implementing a Neural Network on an S1500 PLC
 Final project for the Building AI course
 
 
