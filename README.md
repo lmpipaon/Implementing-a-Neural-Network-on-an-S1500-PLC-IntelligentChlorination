@@ -129,11 +129,8 @@ The heart of a neural network consists of neurons, which process the input data 
   - Normalize the 9 Input Features.
   - Calculate the Hidden Layer Neurons.
   - Calculate the Output Neuron.
+
 This function will be called every second from the main program to process the input data, compute the neural network values, and provide the output for real-time decision-making.
-
-
-   - 
-  
   - [Neural Network](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK.pdf)
  
 
