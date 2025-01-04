@@ -97,3 +97,4 @@ The training is performed using the TensorFlow/Keras library, which applies the 
 
 The program is available in the **src** folder under the name **train_neural_network.py**.
 
+## Implementing the Neural Network in a Siemens S7-1500 PLC
