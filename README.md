@@ -117,9 +117,9 @@ The program is available in the **src** folder under the name **train_neural_net
 
 
 - [Hidden Neuron](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/HIDDEN_NEURON.pdf)
-- ![Neural Network](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK.pdf)
-- ![Neural Network Initialization](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_INITIALIZATION.pdf)
-- ![Neural Network Weights Biases Normalization](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_WEIGHTS_BIASES_NORMALIZATION.pdf)
-- ![Normalization](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NORMALIZATION.pdf)
-- ![Output Neuron](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/OUTPUT_NEURON.pdf)
+- [Neural Network](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK.pdf)
+- [Neural Network Initialization](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_INITIALIZATION.pdf)
+- [Neural Network Weights Biases Normalization](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_WEIGHTS_BIASES_NORMALIZATION.pdf)
+- [Normalization](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NORMALIZATION.pdf)
+- [Output Neuron](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/OUTPUT_NEURON.pdf)
 
