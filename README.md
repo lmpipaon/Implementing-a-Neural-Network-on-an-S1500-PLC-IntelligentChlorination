@@ -75,10 +75,12 @@ The dataset is stored in a .csv file with a total of 8,463 rows, including the h
   - **Feature9:** Coagulant PPM
 
 ## Neural Network Structure
-
 The chosen neural network architecture will be simple to facilitate easy implementation on a Siemens S1500 PLC. I will experiment with 9 input features, a hidden layer with 6 neurons using a ReLU (Rectified Linear Unit) activation function, which is straightforward to implement. The output layer will consist of a single neuron without an activation function, allowing for continuous output across the full range.
 
 This design aims to be both efficient and compatible with the constraints of the PLC system, ensuring the neural network can be deployed and run in a real-time environment.
 
 ![NeuralNetworkDiagram](./images/NeuralNetworkDiagram.png)
+
+## Supervised Training of the Model
+The model training process will be carried out using Python, leveraging its powerful libraries such as TensorFlow or Keras for building and training the neural network. During this process, I have used the assistance of an AI tool (ChatGPT) to guide me through the coding,
 
