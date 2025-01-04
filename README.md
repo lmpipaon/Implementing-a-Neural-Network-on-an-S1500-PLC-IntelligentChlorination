@@ -99,18 +99,12 @@ The program must perform the following tasks:
    - Splits data into training (80%) and validation (20%).
    - Trains with backpropagation, employing Early Stopping to prevent overfitting.
 4. Evaluation
-    - Assesses the model on the validation set using MSE, MAE, and 
-𝑅
-2
-R 
-2
+    - Assesses the model on the validation set using MSE, MAE, and R<sup>2</sup>
   (coefficient of determination).
-Visualization
-
-Creates graphs to evaluate performance, including loss curves, scatter plots of predictions vs. actual values, residual distributions, and line plots.
-Exporting Results
-
-Saves the model, scaler, and extracted weights and biases for future use.
+5. Visualization
+   - Creates graphs to evaluate performance, including loss curves, scatter plots of predictions vs. actual values, residual distributions, and line plots.
+6. Exporting Results
+   - Saves the model, scaler, and extracted weights and biases for future use.
 
 The program is available in the **src** folder under the name **train_neural_network.py**.
 
