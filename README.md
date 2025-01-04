@@ -99,4 +99,4 @@ The program is available in the **src** folder under the name **train_neural_net
 
 ## Implementing the Neural Network in a Siemens S7-1500 PLC
 
-[Link Text](./PLC/filename.pdf)
+[HIDDEN NEURON](./PLC/HIDDEN NEURON.pdf)
