@@ -116,7 +116,7 @@ The program is available in the **src** folder under the name **train_neural_net
 ## Implementing the Neural Network in a Siemens S7-1500 PLC
 
 
-- ![Hidden Neuron](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/HIDDEN_NEURON.pdf)
+- [Hidden Neuron](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/HIDDEN_NEURON.pdf)
 - ![Neural Network](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK.pdf)
 - ![Neural Network Initialization](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_INITIALIZATION.pdf)
 - ![Neural Network Weights Biases Normalization](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_WEIGHTS_BIASES_NORMALIZATION.pdf)
