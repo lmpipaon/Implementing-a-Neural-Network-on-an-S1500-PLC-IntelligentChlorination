@@ -103,16 +103,13 @@ The program must perform the following tasks:
      - K-fold Cross-Validation
      - Different dataset splits.
      - Tuning the number of epochs and batch size.
-    - After evaluating the results, the final configuration was selected based on the best balance between validation loss and R<sup>2</sup> score, focusing on stability and generalization.
-  
-   
+    - After evaluating the results, the final configuration was selected based on the best balance between validation loss and R<sup>2</sup> score, focusing on stability and generalization.   
 5. Evaluation
-    - Assesses the model on the validation set using MSE, MAE, and R<sup>2</sup>
-  (coefficient of determination).
+    - Assesses the model on the validation set using MSE, MAE, and R<sup>2</sup>.
 6. Visualization
    - Creates graphs to evaluate performance, including loss curves, scatter plots of predictions vs. actual values, residual distributions, and line plots.
 7. Exporting Results
-   - Saves the model, scaler, and extracted weights and biases for future use.
+   - Extracts weights, biases, and scaling parameters (mean and standard deviation) from the model and displays them in a format that can be directly copied and pasted into a TIA Portal Data Block.
 
 The program is available in the **src** folder under the name **train_neural_network.py**.
 
