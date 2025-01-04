@@ -2,7 +2,7 @@
 created by Reaktor Innovations and University of Helsinki. 
 Copy the template, paste it to your GitHub README and edit! -->
 
-# Smart-Chlorination
+# Intelligent Chlorination: Implementing a Neural Network on an S1500 PLC
 Final project for the Building AI course
 
 
