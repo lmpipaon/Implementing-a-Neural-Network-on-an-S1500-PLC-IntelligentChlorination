@@ -114,10 +114,14 @@ The program must perform the following tasks:
 The program is available in the **src** folder under the name **train_neural_network.py**.
 
 ## Implementing the Neural Network in a Siemens S7-1500 PLC
+The heart of a neural network consists of neurons, which process the input data and pass the results through an activation function. In my case, the network has two types of neurons:
 
+- Hidden Layer Neurons: These neurons have 9 input connections, and they use the ReLU (Rectified Linear Unit) activation function to introduce non-linearity into the network, allowing it to learn complex patterns in the data.
+  -  [Hidden Neuron](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/HIDDEN_NEURON.pdf)
+- Output Layer Neurons: These neurons have 6 input connections and do not use an activation function, as the output is a linear result based on the weighted sum of inputs.
+  - [Neural Network](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK.pdf)
+ 
 
-- [Hidden Neuron](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/HIDDEN_NEURON.pdf)
-- [Neural Network](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK.pdf)
 - [Neural Network Initialization](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_INITIALIZATION.pdf)
 - [Neural Network Weights Biases Normalization](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_WEIGHTS_BIASES_NORMALIZATION.pdf)
 - [Normalization](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NORMALIZATION.pdf)
