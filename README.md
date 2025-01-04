@@ -96,14 +96,22 @@ The program must perform the following tasks:
      - 1 output neuron (linear activation for regression).
    - Uses adam optimizer, mean squared error (MSE) as the loss function, and mean absolute error (MAE) as a metric.
 3. Training
-   - Splits data into training (80%) and validation (20%).
-   - Trains with backpropagation, employing Early Stopping to prevent overfitting.
-4. Evaluation
+   - Splits data into training (80%) and validation (20%) sets using scikit-learn's train_test_split.
+   - Trains the model with TensorFlow/Keras, applying backpropagation and Early Stopping to avoid overfitting.
+   - Tested multiple configurations and techniques to optimize performance, including:
+     - Dropout layers.
+     - K-fold Cross-Validation
+     - Different dataset splits.
+     - Tuning the number of epochs and batch size.
+    - After evaluating the results, the final configuration was selected based on the best balance between validation loss and R<sup>2</sup> score, focusing on stability and generalization.
+  
+   
+5. Evaluation
     - Assesses the model on the validation set using MSE, MAE, and R<sup>2</sup>
   (coefficient of determination).
-5. Visualization
+6. Visualization
    - Creates graphs to evaluate performance, including loss curves, scatter plots of predictions vs. actual values, residual distributions, and line plots.
-6. Exporting Results
+7. Exporting Results
    - Saves the model, scaler, and extracted weights and biases for future use.
 
 The program is available in the **src** folder under the name **train_neural_network.py**.
