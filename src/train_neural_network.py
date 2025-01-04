@@ -9,10 +9,7 @@ from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.callbacks import EarlyStopping
 import matplotlib.pyplot as plt
 import pickle
-import os
 
-
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Suprime los warnings
 
 
 # Load the CSV
