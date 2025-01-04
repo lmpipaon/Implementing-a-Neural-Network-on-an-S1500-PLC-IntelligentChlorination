@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import KFold
+from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import r2_score
 import tensorflow as tf
@@ -9,6 +9,11 @@ from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.callbacks import EarlyStopping
 import matplotlib.pyplot as plt
 import pickle
+import os
+
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Suprime los warnings
+
 
 # Load the CSV
 csv_path = 'water_treatment_data.csv'  # Change this to the appropriate file path
@@ -22,69 +27,44 @@ input_features = data.iloc[:, 1:]  # Remaining columns as input features
 output = output.astype(float)
 input_features = input_features.astype(float)
 
-# K-Fold Cross Validation setup
-k_folds = 5  # Define the number of folds
-kf = KFold(n_splits=k_folds, shuffle=True, random_state=42)
+# Split the data into training and validation sets
+X_train, X_val, y_train, y_val = train_test_split(input_features, output, test_size=0.2, random_state=42)
 
-# Store metrics for each fold
-fold_losses = []
-fold_maes = []
-fold_r2s = []
+# Standardize the input features
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_val = scaler.transform(X_val)
 
-# Cross-validation loop
-for fold, (train_index, val_index) in enumerate(kf.split(input_features), start=1):
-    print(f"\nTraining fold {fold}/{k_folds}")
+# Create the model
+model = Sequential([
+    Dense(6, activation='relu', input_shape=(X_train.shape[1],)),
+    # Dropout(0.2),
+    Dense(1, activation=None)  # Linear activation for regression
+])
 
-    # Split the data into train and validation sets
-    X_train, X_val = input_features.iloc[train_index], input_features.iloc[val_index]
-    y_train, y_val = output.iloc[train_index], output.iloc[val_index]
+# Compile the model
+model.compile(optimizer='adam', loss='mse', metrics=['mae'])
 
-    # Standardize the input features
-    scaler = StandardScaler()
-    X_train = scaler.fit_transform(X_train)
-    X_val = scaler.transform(X_val)
+# Early stopping
+early_stopping = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
 
-    # Create the model
-    model = Sequential([
-        Dense(6, activation='relu', input_shape=(X_train.shape[1],)),
-        Dropout(0.2),
-        Dense(1, activation=None)  # Linear activation for regression
-    ])
+# Train the model
+history = model.fit(
+    X_train, y_train,
+    validation_data=(X_val, y_val),
+    epochs=300,
+    batch_size=32,
+    verbose=1,  # Show training progress
+    callbacks=[early_stopping]
+)
 
-    # Compile the model
-    model.compile(optimizer='adam', loss='mse', metrics=['mae'])
+# Evaluate the model
+loss, mae = model.evaluate(X_val, y_val, verbose=0)
+y_pred = model.predict(X_val)
+r2 = r2_score(y_val, y_pred)
 
-    # Early stopping
-    early_stopping = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
-
-    # Train the model
-    history = model.fit(
-        X_train, y_train,
-        validation_data=(X_val, y_val),
-        epochs=300,
-        batch_size=32,
-        verbose=0,  # Set verbose to 0 to avoid printing epoch details
-        callbacks=[early_stopping]
-    )
-
-    # Evaluate the model
-    loss, mae = model.evaluate(X_val, y_val, verbose=0)
-    y_pred = model.predict(X_val)
-    r2 = r2_score(y_val, y_pred)
-
-    # Store metrics for this fold
-    fold_losses.append(loss)
-    fold_maes.append(mae)
-    fold_r2s.append(r2)
-
-    print(f"Fold {fold} results - Loss: {loss:.4f}, MAE: {mae:.4f}, R^2: {r2:.4f}")
-
-# Calculate and print the average performance across all folds
-print("\nAverage performance across all folds:")
-print(f"Average Loss: {np.mean(fold_losses):.4f}")
-print(f"Average MAE: {np.mean(fold_maes):.4f}")
-print(f"Average R^2: {np.mean(fold_r2s):.4f}")
-
+# Print results
+print(f"Final results - Loss: {loss:.4f}, MAE: {mae:.4f}, R^2: {r2:.4f}")
 
 # Display calculated weights and biases
 def generate_db_format(weights_layer1, biases_layer1, weights_layer2, biases_layer2, column_names):
@@ -113,22 +93,56 @@ def generate_db_format(weights_layer1, biases_layer1, weights_layer2, biases_lay
 
 # Extract weights and biases
 weights_layer1, biases_layer1 = model.layers[0].get_weights()
-weights_layer2, biases_layer2 = model.layers[2].get_weights()
+weights_layer2, biases_layer2 = model.layers[1].get_weights()
 
 generate_db_format(weights_layer1, biases_layer1, weights_layer2, biases_layer2, data.columns[1:])
 
-
-
-# Optionally, save the model and scaler from the last fold
-model.save('trained_model.h5')
+# Optionally, save the model and scaler
+model.save('trained_model.keras')
 with open('scaler.pkl', 'wb') as f:
     pickle.dump(scaler, f)
 
-# Optionally, plot the training history (for the last fold)
-plt.plot(history.history['loss'], label='Training Loss')
-plt.plot(history.history['val_loss'], label='Validation Loss')
-plt.title('Training History (Last Fold)')
+# Plot the training history
+plt.figure(figsize=(10, 5))
+plt.plot(history.history['loss'], label='Training Loss', color='blue')
+plt.plot(history.history['val_loss'], label='Validation Loss', color='orange')
+plt.title('Training and Validation Loss')
 plt.xlabel('Epochs')
 plt.ylabel('Loss')
 plt.legend()
+plt.show()
+
+# Scatter plot: Predictions vs Actual Values
+plt.figure(figsize=(7, 7))
+plt.scatter(y_val, y_pred, alpha=0.6, color='green')
+plt.plot([min(y_val), max(y_val)], [min(y_val), max(y_val)], color='red', linestyle='--')  # Identity line
+plt.title('Predicted vs Actual Values')
+plt.xlabel('Actual Values')
+plt.ylabel('Predicted Values')
+plt.show()
+
+# Histogram of residuals (errors)
+errors = y_val - y_pred.flatten()
+plt.figure(figsize=(10, 5))
+plt.hist(errors, bins=30, color='purple', alpha=0.7)
+plt.title('Distribution of Residuals (Errors)')
+plt.xlabel('Error')
+plt.ylabel('Frequency')
+plt.show()
+
+# Line plot of predictions vs actual values
+plt.figure(figsize=(10, 5))
+plt.plot(range(len(y_val)), y_val, label='Actual Values', color='blue', alpha=0.7)
+plt.plot(range(len(y_val)), y_pred, label='Predicted Values', color='orange', alpha=0.7)
+plt.title('Predicted vs Actual Values (Line Plot)')
+plt.xlabel('Sample Index')
+plt.ylabel('Value')
+plt.legend()
+plt.show()
+
+# Box plot of residuals
+plt.figure(figsize=(7, 5))
+plt.boxplot(errors, vert=False, patch_artist=True, boxprops=dict(facecolor="purple", color="black"))
+plt.title('Box Plot of Residuals')
+plt.xlabel('Error')
 plt.show()
