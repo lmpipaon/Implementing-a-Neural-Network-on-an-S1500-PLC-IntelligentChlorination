@@ -73,6 +73,8 @@ The dataset is stored in a .csv file with a total of 8,463 rows, including the h
   - **Feature7:** Effluent turbidity
   - **Feature8:** pH
   - **Feature9:** Coagulant PPM
+ 
+The dataset file is located in the **data** folder under the name **water_treatment_data.csv**.
 
 ## Neural Network Structure
 The chosen neural network architecture will be simple to facilitate easy implementation on a Siemens S1500 PLC. I will experiment with 9 input features, a hidden layer with 6 neurons using a ReLU (Rectified Linear Unit) activation function, which is straightforward to implement. The output layer will consist of a single neuron without an activation function, allowing for continuous output across the full range.
