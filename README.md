@@ -103,7 +103,7 @@ The program must perform the following tasks:
      - K-fold Cross-Validation
      - Different dataset splits.
      - Tuning the number of epochs and batch size.
-    - After evaluating the results, the final configuration was selected based on the best balance between validation loss and R<sup>2</sup> score, focusing on stability and generalization.   
+    - After evaluating the results, the final configuration was selected based on the best balance between validation loss and R<sup>2</sup> score.   
 5. Evaluation
     - Assesses the model on the validation set using MSE, MAE, and R<sup>2</sup>.
 6. Visualization
