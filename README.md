@@ -91,3 +91,5 @@ The program must perform the following tasks:
 4. Evaluate the model.
 5. Visualize the results.
 
+The training is performed using the TensorFlow/Keras library, which applies the backpropagation algorithm. During the training, I experimented with different variants, such as Dropout, K-fold Cross-Validation, and the number of epochs. Ultimately, I selected the configuration that performed best.
+
