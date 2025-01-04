@@ -87,13 +87,30 @@ This design aims to be both efficient and compatible with the constraints of the
 The model training process will be carried out using Python, leveraging its powerful libraries such as TensorFlow or Keras for building and training the neural network. During this process, I have used the assistance of an AI tool (ChatGPT) to guide me through the coding.
 
 The program must perform the following tasks:
-1. Read data from the .CSV file and prepare it.
-2. Create the model (9 input features, 1 hidden layer with 6 neurons, and 1 output neuron).
-3. Train the model.
-4. Evaluate the model.
-5. Visualize the results.
+1. Data Preparation
+   - Reads data from a CSV file, separates input features (9 columns) and the target variable (1 column).
+   - Converts data to numeric and standardizes features using StandardScaler to improve model performance.
+2. Model Creation
+   - Defines a simple neural network with:
+     - 1 hidden layer (6 neurons, ReLU activation).
+     - 1 output neuron (linear activation for regression).
+   - Uses adam optimizer, mean squared error (MSE) as the loss function, and mean absolute error (MAE) as a metric.
+3. Training
+   - Splits data into training (80%) and validation (20%).
+   - Trains with backpropagation, employing Early Stopping to prevent overfitting.
+4. Evaluation
+    - Assesses the model on the validation set using MSE, MAE, and 
+𝑅
+2
+R 
+2
+  (coefficient of determination).
+Visualization
 
-The training is performed using the TensorFlow/Keras library, which applies the backpropagation algorithm. During the training, I experimented with different variants, such as Dropout, K-fold Cross-Validation, and the number of epochs. Ultimately, I selected the configuration that performed best.
+Creates graphs to evaluate performance, including loss curves, scatter plots of predictions vs. actual values, residual distributions, and line plots.
+Exporting Results
+
+Saves the model, scaler, and extracted weights and biases for future use.
 
 The program is available in the **src** folder under the name **train_neural_network.py**.
 
