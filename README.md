@@ -127,11 +127,8 @@ The program is available in the **src** folder under the name **train_neural_net
    - [Neural Network Initialization](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_INITIALIZATION.pdf)
    - [Neural Network weights, biases and normalization data](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_WEIGHTS_BIASES_NORMALIZATION.pdf)
 
-**Neural Network:** Finally, a function will be responsible for executing the following steps:
-  - Normalize the 9 Input Features.
-  - Calculate the Hidden Layer Neurons.
-  - Calculate the Output Neuron.
-    - [Neural Network](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK.pdf)
+**Neural Network:** Finally, a function will be responsible for executing the following steps: Normalize the 9 Input Features, Calculate the Hidden Layer Neurons, Calculate the Output Neuron.
+- [Neural Network](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK.pdf)
 
 This function will be called every second from the main program
  
