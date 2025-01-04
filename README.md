@@ -122,9 +122,9 @@ The heart of a neural network consists of neurons, which process the input data 
   - [Output Neuron](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/OUTPUT_NEURON.pdf)
 - Before feeding the data into the network, the input features must be normalized to ensure that the scale of the input values does not interfere with the learning process
   - [Normalization](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NORMALIZATION.pdf)
--At the beginning of the program, within the FishScan system, it is essential to load the weights, biases, and normalization data into their respective Instance Data Blocks (DBs). These blocks will hold the trained weights and biases of the neural network, as well as the normalization parameters (mean and standard deviation) used during training.
+- At the beginning of the program, within the FishScan system, it is essential to load the weights, biases, and normalization data into their respective Instance Data Blocks (DBs). These blocks will hold the trained weights and biases of the neural network, as well as the normalization parameters (mean and standard deviation) used during training.
    - [Neural Network Initialization](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_INITIALIZATION.pdf)
-   - [Neural Network Weights Biases Normalization](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_WEIGHTS_BIASES_NORMALIZATION.pdf)
+   - [Neural Network weights, biases and normalization data](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_WEIGHTS_BIASES_NORMALIZATION.pdf)
    - 
   
   - [Neural Network](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK.pdf)
