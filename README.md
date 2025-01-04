@@ -125,13 +125,11 @@ The heart of a neural network consists of neurons, which process the input data 
 - At the beginning of the program, within the FishScan system, it is essential to load the weights, biases, and normalization data into their respective Instance Data Blocks (DBs). These blocks will hold the trained weights and biases of the neural network, as well as the normalization parameters (mean and standard deviation) used during training.
    - [Neural Network Initialization](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_INITIALIZATION.pdf)
    - [Neural Network weights, biases and normalization data](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_WEIGHTS_BIASES_NORMALIZATION.pdf)
-- Finally, a function will be responsible for executing the following steps:
+- Finally, a function will be responsible for executing the following steps: (This function will be called every second from the main program)
   - Normalize the 9 Input Features.
   - Calculate the Hidden Layer Neurons.
   - Calculate the Output Neuron.
-
-This function will be called every second from the main program to process the input data, compute the neural network values, and provide the output for real-time decision-making.
-  - [Neural Network](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK.pdf)
+   - [Neural Network](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK.pdf)
  
 
 
