@@ -93,3 +93,5 @@ The program must perform the following tasks:
 
 The training is performed using the TensorFlow/Keras library, which applies the backpropagation algorithm. During the training, I experimented with different variants, such as Dropout, K-fold Cross-Validation, and the number of epochs. Ultimately, I selected the configuration that performed best.
 
+The program is available in the **src** folder under the name **train_neural_network.py**.
+
