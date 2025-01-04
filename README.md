@@ -84,9 +84,6 @@ This design aims to be both efficient and compatible with the constraints of the
 ## Supervised Training of the Model
 The model training process will be carried out using Python, leveraging its powerful libraries such as TensorFlow or Keras for building and training the neural network. During this process, I have used the assistance of an AI tool (ChatGPT) to guide me through the coding.
 
-
-No problem! Here's the continuation in English:
-
 The program must perform the following tasks:
 1. Read data from the .CSV file and prepare it.
 2. Create the model (9 input features, 1 hidden layer with 6 neurons, and 1 output neuron).
