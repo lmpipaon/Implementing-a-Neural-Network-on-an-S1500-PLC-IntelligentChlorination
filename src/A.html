@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red Neuronal</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .input-row { margin-bottom: 10px; }
+    .input-row label { margin-right: 10px; }
+    .output { margin-top: 20px; font-size: 1.2em; }
+    button { padding: 10px 15px; font-size: 1em; cursor: pointer; }
+    canvas { display: block; margin: 20px auto; }
+  </style>
+</head>
+<body>
+  <h1>Red Neuronal Simulada</h1>
+  <div id="inputs"></div>
+  <button id="calculate">Calcular</button>
+  <div class="output" id="output"></div>
+  <canvas id="networkCanvas" width="600" height="400"></canvas>
+  <script>
+    // Crear inputs dinámicamente
+    const inputContainer = document.getElementById("inputs");
+    for (let i = 0; i < 9; i++) {
+      const inputRow = document.createElement("div");
+      inputRow.className = "input-row";
+      inputRow.innerHTML = `<label>Entrada ${i + 1}:</label><input type="number" id="input${i}" />`;
+      inputContainer.appendChild(inputRow);
+    }
+
+    // Inicializar pesos y sesgos
+    const initializeWeights = (rows, cols) => Array(rows).fill(0).map(() => Array(cols).fill(0).map(() => Math.random()));
+    const initializeBiases = size => Array(size).fill(0).map(() => Math.random());
+
+    const weights1 = initializeWeights(9, 6); // Pesos para la capa oculta
+    const biases1 = initializeBiases(6);
+    const weights2 = initializeWeights(6, 1); // Pesos para la salida
+    const biases2 = initializeBiases(1);
+
+    // Función de activación ReLU
+    const relu = x => Math.max(0, x);
+
+    // Z-score normalización
+    const zScoreNormalize = inputs => {
+      const mean = inputs.reduce((a, b) => a + b, 0) / inputs.length;
+      const stdDev = Math.sqrt(inputs.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / inputs.length);
+      return inputs.map(x => (x - mean) / stdDev);
+    };
+
+    // Propagación hacia adelante
+    const forwardPass = inputs => {
+      // Normalización Z-score
+      const normalizedInputs = zScoreNormalize(inputs);
+
+      // Capa oculta
+      const hiddenLayer = Array(6).fill(0).map((_, i) => 
+        relu(normalizedInputs.map((val, j) => val * weights1[j][i]).reduce((a, b) => a + b, biases1[i]))
+      );
+
+      // Capa de salida
+      const output = hiddenLayer.map((val, i) => val * weights2[i][0]).reduce((a, b) => a + b, biases2[0]);
+
+      return output;
+    };
+
+    // Dibujar red neuronal
+    const canvas = document.getElementById("networkCanvas");
+    const ctx = canvas.getContext("2d");
+
+    const drawNetwork = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const inputLayerX = 100;
+      const hiddenLayerX = 300;
+      const outputLayerX = 500;
+
+      const inputLayerY = Array.from({ length: 9 }, (_, i) => 50 + i * 35);
+      const hiddenLayerY = Array.from({ length: 6 }, (_, i) => 75 + i * 50);
+      const outputLayerY = [200];
+
+      // Dibujar entradas
+      inputLayerY.forEach(y => {
+        ctx.beginPath();
+        ctx.arc(inputLayerX, y, 10, 0, Math.PI * 2);
+        ctx.fillStyle = "blue";
+        ctx.fill();
+        ctx.stroke();
+      });
+
+      // Dibujar capa oculta
+      hiddenLayerY.forEach(y => {
+        ctx.beginPath();
+        ctx.arc(hiddenLayerX, y, 10, 0, Math.PI * 2);
+        ctx.fillStyle = "green";
+        ctx.fill();
+        ctx.stroke();
+      });
+
+      // Dibujar salida
+      outputLayerY.forEach(y => {
+        ctx.beginPath();
+        ctx.arc(outputLayerX, y, 10, 0, Math.PI * 2);
+        ctx.fillStyle = "red";
+        ctx.fill();
+        ctx.stroke();
+      });
+
+      // Conectar entradas con capa oculta
+      inputLayerY.forEach(inputY => {
+        hiddenLayerY.forEach(hiddenY => {
+          ctx.beginPath();
+          ctx.moveTo(inputLayerX, inputY);
+          ctx.lineTo(hiddenLayerX, hiddenY);
+          ctx.strokeStyle = "#aaa";
+          ctx.stroke();
+        });
+      });
+
+      // Conectar capa oculta con salida
+      hiddenLayerY.forEach(hiddenY => {
+        outputLayerY.forEach(outputY => {
+          ctx.beginPath();
+          ctx.moveTo(hiddenLayerX, hiddenY);
+          ctx.lineTo(outputLayerX, outputY);
+          ctx.strokeStyle = "#aaa";
+          ctx.stroke();
+        });
+      });
+    };
+
+    drawNetwork(); // Llamar para dibujar la red
+
+    // Evento para calcular
+    document.getElementById("calculate").addEventListener("click", () => {
+      const inputs = Array.from({ length: 9 }, (_, i) => Number(document.getElementById(`input${i}`).value));
+      const result = forwardPass(inputs);
+      document.getElementById("output").textContent = `Salida: ${result}`;
+    });
+  </script>
+</body>
+</html>
