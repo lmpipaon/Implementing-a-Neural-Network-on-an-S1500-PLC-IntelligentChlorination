@@ -1,0 +1,56 @@
+import tensorflow as tf
+import numpy as np
+
+# Cargar el modelo entrenado
+modelo_path = "trained_model.keras"
+model = tf.keras.models.load_model(modelo_path)
+
+# Función para normalizar valores (asegúrate de usar la misma normalización que en el entrenamiento)
+def normalizar(valores):
+    # Ejemplo: normalización mínima-máxima (ajusta según tu caso)
+    min_val = 0.0
+    max_val = 1.0
+    return (valores - min_val) / (max_val - min_val)
+
+# Función para ejecutar el modelo y mostrar valores intermedios
+def ejecutar_modelo_con_detalles(valores_entrada):
+    """
+    Ejecuta el modelo cargado con los valores de entrada proporcionados y muestra valores intermedios.
+    
+    :param valores_entrada: Lista o array numpy con los 9 valores de entrada.
+    :return: Predicción final del modelo.
+    """
+    # Convertir a array numpy y validar dimensiones
+    entrada_array = np.array(valores_entrada, dtype=np.float32)
+    if entrada_array.shape != (9,):
+        raise ValueError(f"Se esperaban 9 valores de entrada, pero se recibieron {entrada_array.shape[0]}.")
+
+    # Normalizar los valores de entrada
+    entrada_normalizada = normalizar(entrada_array)
+    print("Valores normalizados:", entrada_normalizada)
+
+    # Expandir dimensiones para adaptarse al modelo (batch_size, features)
+    entrada_expandida = np.expand_dims(entrada_normalizada, axis=0)
+
+    # Crear un modelo intermedio para acceder a cada capa
+    salidas_intermedias = []
+    for capa in model.layers:
+        modelo_intermedio = tf.keras.Model(inputs=model.input, outputs=capa.output)
+        salida = modelo_intermedio.predict(entrada_expandida)
+        salidas_intermedias.append((capa.name, salida))
+        print(f"Salida de la capa '{capa.name}':\n{salida}")
+
+    # Realizar la predicción final
+    prediccion = model.predict(entrada_expandida)
+    print("Predicción final del modelo:", prediccion)
+
+    return prediccion, salidas_intermedias
+
+# Valores de entrada (ejemplo con 9 valores)
+valores_entrada = [1.0, 0.5, -0.2, 0.8, 0.1, -1.0, 0.3, 0.7, 0.9]  # Cambia estos valores según sea necesario
+
+# Ejecutar la predicción con detalles
+try:
+    resultado, detalles_intermedios = ejecutar_modelo_con_detalles(valores_entrada)
+except ValueError as e:
+    print("Error:", e)
