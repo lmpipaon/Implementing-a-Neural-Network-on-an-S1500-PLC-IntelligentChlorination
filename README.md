@@ -134,5 +134,16 @@ The program is available in the **src** folder under the name **train_neural_net
 
 This function will be called every second from the main program
  
+## Integration with the Existing PID Controller
+To ensure a smooth transition and maintain stability in the chlorine dosing process, the existing PID controller remains part of the control loop, operating alongside the neural network. The outputs of both systems are combined to calculate the final pulse rate for the dosing pump:
 
+Combining Outputs:
+The output of the neural network is added to the output of the PID controller. The neural network predicts the required pulse frequency based on water parameters, providing a rapid adjustment to the dosing process. The PID controller fine-tunes the free chlorine level by compensating for any residual errors.
+
+Delay Compensation:
+In the chlorine dosing system, there is an inherent delay of approximately 9 minutes between the time chlorine is dosed and when its effect is measured at the free chlorine sensor.
+
+To prevent the PID controller from attempting to compensate for differences that do not yet exist (as the neural network adjusts instantly to the new setpoint), a delay of 9 minutes is introduced at the setpoint input to the PID controller.
+This ensures that the PID controller reacts only to actual deviations in the free chlorine level, avoiding unnecessary oscillations and maintaining system stability.
+By combining the predictive capabilities of the neural network with the PID controller's fine-tuning adjustments and introducing delay compensation, the system achieves a more stable and efficient chlorine dosing process.
 
