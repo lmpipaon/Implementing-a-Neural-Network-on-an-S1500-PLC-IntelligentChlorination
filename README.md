@@ -148,7 +148,6 @@ This ensures that the PID controller reacts only to actual deviations in the fre
 By combining the predictive capabilities of the neural network with the PID controller's fine-tuning adjustments and introducing delay compensation, the system achieves a more stable and efficient chlorine dosing process.
 
 
+## Neural Network Output Simulator for Chlorine Dosing
+I made this interactive web tool [Juega con Redes Neuronales](https://lmpipaon.github.io/web/playing_NN.html) for fun! You can enter water parameters and see how the neural network calculates the pump pulses. Try it and see how it works!
 
-# Playing
-
-Este es un enlace a mi proyecto: [Juega con Redes Neuronales](https://lmpipaon.github.io/web/playing_NN.html)
