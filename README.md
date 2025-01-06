@@ -10,7 +10,7 @@ Final project for the Building AI course
 
 This project focuses on predicting the pulse rate of a chlorine dosing pump in a drinking water treatment plant based on water characteristics. An AI model will be developed to calculate the required pulse frequency.
 
-The model will be deployed on a Siemens S1500 PLC to facilitate real-time data processing and automated pump control.
+The model will be deployed on a Siemens S1500 PLC.
 
 ## Background
 
@@ -93,6 +93,7 @@ The program must perform the following tasks:
 2. Model Creation
    - Defines a simple neural network with:
      - 1 hidden layer (6 neurons, ReLU activation).
+     - A dropout layer that randomly disables 20% of the neurons in the hidden layer to prevent overfitting.
      - 1 output neuron (linear activation for regression).
    - Uses adam optimizer, mean squared error (MSE) as the loss function, and mean absolute error (MAE) as a metric.
 3. Training
@@ -126,6 +127,7 @@ The program is available in the **src** folder under the name **train_neural_net
 **Initialization:** At the beginning of the program, within the FishScan system, it is essential to load the weights, biases, and normalization data into their respective Instance Data Blocks (DBs). These blocks will hold the trained weights and biases of the neural network, as well as the normalization parameters (mean and standard deviation) used during training.
    - [Neural Network Initialization](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_INITIALIZATION.pdf)
    - [Neural Network weights, biases and normalization data](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_WEIGHTS_BIASES_NORMALIZATION.pdf)
+(The training process of the neural network has been implemented in such a way that the results can be directly copied and pasted into a database in TIA Portal, facilitating its use in automation systems.)
 
 **Neural Network:** Finally, a function will be responsible for executing the following steps: Normalize the 9 Input Features, Calculate the Hidden Layer Neurons, Calculate the Output Neuron.
 - [Neural Network](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK.pdf)
