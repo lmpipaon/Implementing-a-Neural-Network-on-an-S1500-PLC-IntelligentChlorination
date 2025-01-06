@@ -126,7 +126,7 @@ The program is available in the **src** folder under the name **train_neural_net
 
 **Initialization:** At the beginning of the program, within the FishScan system, it is essential to load the weights, biases, and normalization data into their respective Instance Data Blocks (DBs). These blocks will hold the trained weights and biases of the neural network, as well as the normalization parameters (mean and standard deviation) used during training.
    - [Neural Network Initialization](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_INITIALIZATION.pdf)
-   - [Neural Network weights, biases and normalization data](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_WEIGHTS_BIASES_NORMALIZATION.pdf)
+   - [Neural Network weights, biases and normalization data](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_WEIGHTS_BIASES_NORMALIZATION.pdf)<br>
 (The training process of the neural network has been implemented in such a way that the results can be directly copied and pasted into a database in TIA Portal, facilitating its use in automation systems.)
 
 **Neural Network:** Finally, a function will be responsible for executing the following steps: Normalize the 9 Input Features, Calculate the Hidden Layer Neurons, Calculate the Output Neuron.
