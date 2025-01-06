@@ -77,7 +77,7 @@ The dataset is stored in a .csv file with a total of 8,463 rows, including the h
 The dataset file is located in the **data** folder under the name **water_treatment_data.csv**.
 
 ## Neural Network Structure
-The chosen neural network architecture will be simple to facilitate easy implementation on a Siemens S1500 PLC. I will experiment with 9 input features, a hidden layer with 6 neurons using a ReLU (Rectified Linear Unit) activation function, which is straightforward to implement. The output layer will consist of a single neuron without an activation function, allowing for continuous output across the full range.
+The chosen neural network architecture will be simple to facilitate easy implementation on a Siemens S1500 PLC. I will experiment with **9 input features, a hidden layer with 6 neurons using a ReLU (Rectified Linear Unit) activation function**, which is straightforward to implement. **The output layer will consist of a single neuron without an activation function**, allowing for continuous output across the full range.
 
 This design aims to be both efficient and compatible with the constraints of the PLC system, ensuring the neural network can be deployed and run in a real-time environment.
 
@@ -87,16 +87,16 @@ This design aims to be both efficient and compatible with the constraints of the
 The model training process will be carried out using Python, leveraging its powerful libraries such as TensorFlow or Keras for building and training the neural network. During this process, I have used the assistance of an AI tool (ChatGPT) to guide me through the coding.
 
 The program must perform the following tasks:
-1. Data Preparation
+**1. Data Preparation**
    - Reads data from a CSV file, separates input features (9 columns) and the target variable (1 column).
    - Converts data to numeric and standardizes features using StandardScaler to improve model performance.
-2. Model Creation
+**2. Model Creation**
    - Defines a simple neural network with:
      - 1 hidden layer (6 neurons, ReLU activation).
      - A dropout layer that randomly disables 20% of the neurons in the hidden layer to prevent overfitting.
      - 1 output neuron (linear activation for regression).
    - Uses adam optimizer, mean squared error (MSE) as the loss function, and mean absolute error (MAE) as a metric.
-3. Training
+**3. Training**
    - Splits data into training (80%) and validation (20%) sets using scikit-learn's train_test_split.
    - Trains the model with TensorFlow/Keras, applying backpropagation and Early Stopping to avoid overfitting.
    - Tested multiple configurations and techniques to optimize performance, including:
@@ -105,11 +105,11 @@ The program must perform the following tasks:
      - Different dataset splits.
      - Tuning the number of epochs and batch size.
     - After evaluating the results, the final configuration was selected based on the best balance between validation loss and R<sup>2</sup> score.   
-5. Evaluation
+**4. Evaluation**
     - Assesses the model on the validation set using MSE, MAE, and R<sup>2</sup>.
-6. Visualization
+**5. Visualization**
    - Creates graphs to evaluate performance, including loss curves, scatter plots of predictions vs. actual values, residual distributions, and line plots.
-7. Exporting Results
+**6. Exporting Results**
    - Extracts weights, biases, and scaling parameters (mean and standard deviation) from the model and displays them in a format that can be directly copied and pasted into a TIA Portal Data Block.
 
 The program is available in the **src** folder under the name **train_neural_network.py**.
@@ -137,10 +137,10 @@ This function will be called every second from the main program
 ## Integration with the Existing PID Controller
 To ensure a smooth transition and maintain stability in the chlorine dosing process, the existing PID controller remains part of the control loop, operating alongside the neural network. The outputs of both systems are combined to calculate the final pulse rate for the dosing pump:
 
-Combining Outputs:
+**Combining Outputs:**
 The output of the neural network is added to the output of the PID controller. The neural network predicts the required pulse frequency based on water parameters, providing a rapid adjustment to the dosing process. The PID controller fine-tunes the free chlorine level by compensating for any residual errors.
 
-Delay Compensation:
+**Delay Compensation:**
 In the chlorine dosing system, there is an inherent delay of approximately 9 minutes between the time chlorine is dosed and when its effect is measured at the free chlorine sensor.
 
 To prevent the PID controller from attempting to compensate for differences that do not yet exist (as the neural network adjusts instantly to the new setpoint), a delay of 9 minutes is introduced at the setpoint input to the PID controller.
