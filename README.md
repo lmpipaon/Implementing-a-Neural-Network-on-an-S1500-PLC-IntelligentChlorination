@@ -149,5 +149,5 @@ By combining the predictive capabilities of the neural network with the PID cont
 
 
 ## Neural Network Output Simulator for Chlorine Dosing
-I made this interactive web tool [Juega con Redes Neuronales](https://lmpipaon.github.io/web/playing_NN.html) for fun! You can enter water parameters and see how the neural network calculates the pump pulses. Try it and see how it works!
+I made this interactive [web tool](https://lmpipaon.github.io/web/playing_NN.html) for fun! You can enter water parameters and see how the neural network calculates the pump pulses. Try it and see how it works!
 
