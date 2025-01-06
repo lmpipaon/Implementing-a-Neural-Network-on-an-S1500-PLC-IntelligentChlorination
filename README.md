@@ -147,3 +147,8 @@ To prevent the PID controller from attempting to compensate for differences that
 This ensures that the PID controller reacts only to actual deviations in the free chlorine level, avoiding unnecessary oscillations and maintaining system stability.
 By combining the predictive capabilities of the neural network with the PID controller's fine-tuning adjustments and introducing delay compensation, the system achieves a more stable and efficient chlorine dosing process.
 
+
+
+# Playing
+
+Este es un enlace a mi proyecto: [Juega con Redes Neuronales](https://lmpipaon.github.io/web/playing_NN.html)
