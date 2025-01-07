@@ -105,8 +105,7 @@ The program must perform the following tasks:
      - K-fold Cross-Validation
      - Different dataset splits.
      - Tuning the number of epochs and batch size.
-    - After evaluating the results, the final configuration was selected based on the best balance between validation loss and R<sup>2</sup> score.
-
+    
 **4. Evaluation**
     - Assesses the model on the validation set using MSE, MAE, and R<sup>2</sup>.
 
@@ -150,7 +149,6 @@ In the chlorine dosing system, there is an inherent delay of approximately 9 min
 To prevent the PID controller from attempting to compensate for differences that do not yet exist (as the neural network adjusts instantly to the new setpoint), a delay of 9 minutes is introduced at the setpoint input to the PID controller.
 This ensures that the PID controller reacts only to actual deviations in the free chlorine level, avoiding unnecessary oscillations and maintaining system stability.
 By combining the predictive capabilities of the neural network with the PID controller's fine-tuning adjustments and introducing delay compensation, the system achieves a more stable and efficient chlorine dosing process.
-
 
 ## Neural Network Output Simulator for Chlorine Dosing
 I made this interactive [web tool](https://lmpipaon.github.io/web/playing_NN.html) for fun! You can enter water parameters and see how the neural network calculates the pump pulses. Try it and see how it works!
