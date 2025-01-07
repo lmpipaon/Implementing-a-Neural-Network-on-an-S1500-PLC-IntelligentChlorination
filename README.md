@@ -86,16 +86,16 @@ This design aims to be both efficient and compatible with the constraints of the
 ## Supervised Training of the Model
 The model training process will be carried out using Python, leveraging its powerful libraries such as TensorFlow or Keras for building and training the neural network. During this process, I have used the assistance of an AI tool (ChatGPT) to guide me through the coding.
 
-The program must perform the following tasks:
+The program must perform the following tasks:<br>
 **1. Data Preparation**
    - Reads data from a CSV file, separates input features (9 columns) and the target variable (1 column).
-   - Converts data to numeric and standardizes features using StandardScaler to improve model performance.
+   - Converts data to numeric and standardizes features using StandardScaler to improve model performance.<br>
 **2. Model Creation**
    - Defines a simple neural network with:
      - 1 hidden layer (6 neurons, ReLU activation).
      - A dropout layer that randomly disables 20% of the neurons in the hidden layer to prevent overfitting.
      - 1 output neuron (linear activation for regression).
-   - Uses adam optimizer, mean squared error (MSE) as the loss function, and mean absolute error (MAE) as a metric.
+   - Uses adam optimizer, mean squared error (MSE) as the loss function, and mean absolute error (MAE) as a metric.<br>
 **3. Training**
    - Splits data into training (80%) and validation (20%) sets using scikit-learn's train_test_split.
    - Trains the model with TensorFlow/Keras, applying backpropagation and Early Stopping to avoid overfitting.
@@ -104,11 +104,11 @@ The program must perform the following tasks:
      - K-fold Cross-Validation
      - Different dataset splits.
      - Tuning the number of epochs and batch size.
-    - After evaluating the results, the final configuration was selected based on the best balance between validation loss and R<sup>2</sup> score.   
+    - After evaluating the results, the final configuration was selected based on the best balance between validation loss and R<sup>2</sup> score.<br> 
 **4. Evaluation**
-    - Assesses the model on the validation set using MSE, MAE, and R<sup>2</sup>.
+    - Assesses the model on the validation set using MSE, MAE, and R<sup>2</sup>.<br>
 **5. Visualization**
-   - Creates graphs to evaluate performance, including loss curves, scatter plots of predictions vs. actual values, residual distributions, and line plots.
+   - Creates graphs to evaluate performance, including loss curves, scatter plots of predictions vs. actual values, residual distributions, and line plots.<br>
 **6. Exporting Results**
    - Extracts weights, biases, and scaling parameters (mean and standard deviation) from the model and displays them in a format that can be directly copied and pasted into a TIA Portal Data Block.
 
