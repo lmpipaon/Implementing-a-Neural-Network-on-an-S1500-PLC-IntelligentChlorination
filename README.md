@@ -63,23 +63,21 @@ The dataset is stored in a .csv file with a total of 8,463 rows, including the h
 | ...    | ...     | ...   | ...  | ...   | ...   | ...     | ...     | ...  | ...     |
 
 - **The first column** (Output) represents the pump pulses This is the target variable the network is trained to predict.
-- **The next 9 columns** (Feature1 to Feature9) correspond to the input features:
-  - **Feature1:** Hypo. tank level
-  - **Feature2:** Chlorine setpoint
-  - **Feature3:** Dosing pump
-  - **Feature4:** UV percentage
-  - **Feature5:** Flow
-  - **Feature6:** Influent turbidity
-  - **Feature7:** Effluent turbidity
-  - **Feature8:** pH
-  - **Feature9:** Coagulant PPM
+- **The next 9 columns** correspond to the input features:
+  - **1:** Hypo. tank level
+  - **2:** Chlorine setpoint
+  - **3:** Dosing pump
+  - **4:** UV percentage
+  - **5:** Flow
+  - **6:** Influent turbidity
+  - **7:** Effluent turbidity
+  - **8:** pH
+  - **9:** Coagulant PPM
  
 The dataset file is located in the **data** folder under the name **water_treatment_data.csv**.
 
 ## Neural Network Structure
-The chosen neural network architecture will be simple to facilitate easy implementation on a Siemens S1500 PLC. I will experiment with **9 input features, a hidden layer with 6 neurons using a ReLU (Rectified Linear Unit) activation function**, which is straightforward to implement. **The output layer will consist of a single neuron without an activation function**, allowing for continuous output across the full range.
-
-This design aims to be both efficient and compatible with the constraints of the PLC system, ensuring the neural network can be deployed and run in a real-time environment.
+The chosen neural network architecture will be simple to facilitate easy implementation on a Siemens S1500 PLC. I will experiment with a hidden layer with 6 neurons using a ReLU activation function, which is straightforward to implement. The output layer will consist of a single neuron without an activation function, allowing for continuous output across the full range.
 
 ![NeuralNetworkDiagram](./images/NeuralNetworkDiagram.png)
 
