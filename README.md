@@ -86,16 +86,17 @@ This design aims to be both efficient and compatible with the constraints of the
 ## Supervised Training of the Model
 The model training process will be carried out using Python, leveraging its powerful libraries such as TensorFlow or Keras for building and training the neural network. During this process, I have used the assistance of an AI tool (ChatGPT) to guide me through the coding.
 
-The program must perform the following tasks:<br>
+The program must perform the following tasks:
+
 **1. Data Preparation**
    - Reads data from a CSV file, separates input features (9 columns) and the target variable (1 column).
    - Converts data to numeric and standardizes features using StandardScaler to improve model performance.<br>
 **2. Model Creation**
    - Defines a simple neural network with:
-     - 1 hidden layer (6 neurons, ReLU activation).
+     - A hidden layer (6 neurons, ReLU activation).
      - A dropout layer that randomly disables 20% of the neurons in the hidden layer to prevent overfitting.
-     - 1 output neuron (linear activation for regression).
-   - Uses adam optimizer, mean squared error (MSE) as the loss function, and mean absolute error (MAE) as a metric.<br>
+     - A output neuron (linear activation for regression).
+   - Uses adam optimizer, mean squared error (MSE) as the loss function, and mean absolute error (MAE) as a metric.
 **3. Training**
    - Splits data into training (80%) and validation (20%) sets using scikit-learn's train_test_split.
    - Trains the model with TensorFlow/Keras, applying backpropagation and Early Stopping to avoid overfitting.
