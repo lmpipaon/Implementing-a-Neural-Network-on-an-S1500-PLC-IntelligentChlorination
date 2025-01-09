@@ -7,13 +7,12 @@ Final project for the Building AI course
 
 
 ## Summary
-
 This project focuses on predicting the pulse rate of a chlorine dosing pump in a drinking water treatment plant based on water characteristics. An AI model will be developed to calculate the required pulse frequency.
 
 The model will be deployed on a Siemens S1500 PLC.
 
-## Background
 
+## Background
 In water treatment plants, maintaining free chlorine levels is commonly managed using a classic PID (Proportional-Integral-Derivative) controller. However, the process requires a specific contact time between chlorine dosing and the measurement of free chlorine to ensure proper disinfection. This introduces a delay in the control loop, which can result in challenges such as instability, oscillations, or overshooting, potentially compromising water quality and dosing efficiency.
 
 This project aims to implement an artificial intelligence based solution to predict the pulse frequency of sodium hypochlorite dosing pumps. While the PID controller will remain part of the closed loop, its role will shift to compensatory adjustments, focusing on fine-tuning the free chlorine level. By relying on predictive AI, the system will reduce fluctuations and enhance the stability of the dosing process.
@@ -22,7 +21,6 @@ Although linear regression could be used for this task, a small neural network i
 
 
 ## The Treatment Plant
-
 ![treatment_plant_diagram](./images/treatment_plant_diagram.png)
 
 The treatment process begins with the dosing of coagulant, followed by filtration of the water. After that, the water undergoes ultraviolet (UV) treatment, and finally, it is chlorinated.
@@ -41,15 +39,18 @@ We monitor several parameters throughout the process, including:
 - Flow rate
 - Free chlorine treated water
 
+
 ## Data sources
 We have an extensive dataset, with measurements recorded every 2 minutes over several years, including the parameters mentioned earlier. However, careful filtering is required to select only the data that can effectively train the neural network.
 
-### Data Filtering
+
+## Data Filtering
 1. Initial Data Filtering:
 At first, I filtered the data by discarding entries where the difference between the setpoint (desired free chlorine) and the measurement (measured free chlorine) was greater than 1% of the setpoint value. I then trained the neural network with the remaining data (as I will explain later). However, the data wasn't good enough, which led to convergence problems during training.
 
 2. Alternative Data Filtering Approach:
 To address these problems, I tried a different filtering method. Instead of discarding only the data where the difference between the setpoint and the measured value was greater than 1%, I also removed all entries where such differences occurred in the 5 readings before and after the current entry. This approach aimed to retain only the data that more accurately captured the relationship between water parameters and the pulse rate of the pumps.
+
 
 ## Data Format Description
 The dataset is stored in a .csv file with a total of 8,463 rows, including the header row. The structure of the file is as follows:
@@ -80,6 +81,7 @@ The dataset file is located in the **data** folder under the name **water_treatm
 The chosen neural network architecture will be simple to facilitate easy implementation on a Siemens S1500 PLC. I will experiment with a hidden layer with 6 neurons using a ReLU activation function, which is straightforward to implement. The output layer will consist of a single neuron without an activation function, allowing for continuous output across the full range.
 
 ![NeuralNetworkDiagram](./images/NeuralNetworkDiagram.png)
+
 
 ## Supervised Training of the Model
 The model training process will be carried out using Python, leveraging its powerful libraries such as TensorFlow or Keras for building and training the neural network. During this process, I have used the assistance of an AI tool (ChatGPT) to guide me through the coding.
@@ -117,6 +119,7 @@ The program must perform the following tasks:
 
 The program is available in the **src** folder under the name **train_neural_network.py**.
 
+
 ## Implementing the Neural Network in a Siemens S7-1500 PLC
 - **Initialization:** At the beginning of the program, within the FishScan system, it is essential to load the weights, biases, and normalization data into their respective Instance Data Blocks (DBs). These blocks will hold the trained weights and biases of the neural network, as well as the normalization parameters (mean and standard deviation) used during training.
    - [Neural Network Initialization](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK_INITIALIZATION.pdf)
@@ -136,6 +139,7 @@ The program is available in the **src** folder under the name **train_neural_net
   - [Neural Network](https://github.com/lmpipaon/Smart-Chlorination/blob/main/PLC/NEURAL_NETWORK.pdf)
 
 This function will be called every second from the main program
+
  
 ## Integration with the Existing PID Controller
 To ensure a smooth transition and maintain stability in the chlorine dosing process, the existing PID controller remains part of the control loop, operating alongside the neural network. The outputs of both systems are combined to calculate the final pulse rate for the dosing pump:
@@ -150,12 +154,12 @@ To prevent the PID controller from attempting to compensate for differences that
 This ensures that the PID controller reacts only to actual deviations in the free chlorine level, avoiding unnecessary oscillations and maintaining system stability.
 By combining the predictive capabilities of the neural network with the PID controller's fine-tuning adjustments and introducing delay compensation, the system achieves a more stable and efficient chlorine dosing process.
 
+
 ## Testing and Comparing Regulation with and without the Neural Network
 Once the neural network was implemented to regulate the pulse rate of the dosing pumps, its performance was satisfactory, adapting well to the system. This reduced the reliance on the PID controller, which played a minimal role in the regulation process. After observing its operation over a prolonged period, I verified that the error consistently remained within a 2% range, matching the results predicted by the model.
 
 The following graph illustrates the response to a step change from 0.7 to 1.0 ppm of free chlorine in the setpoint. We observe that with only the PID controller, the adjustment is slow and gradual toward the target. However, with the neural network combined with the PID controller in regulation, the only delay present is the contact time allowed between dosing and measurement to let the chlorine reaction take effect.
-![SetpointChange_0.7_to_1.0](.images/SetpointChange.png)
-![treatment_plant_diagram](./images/SetpointChange.png)
+![SetpointChange](./images/SetpointChange.png)
 
 
 ## Future Steps
@@ -166,6 +170,7 @@ The following graph illustrates the response to a step change from 0.7 to 1.0 pp
 **Collect More and Better-Quality Data:** Expand the dataset to include more samples, ensuring higher quality to improve the neural network.
 
 **Incorporate Self-Learning Capabilities:** Explore self-learning where the system can update its model based on newly collected data in real time.
+
 
 ## Neural Network Output Simulator for Chlorine Dosing
 I made this interactive [web tool](https://lmpipaon.github.io/web/playing_NN.html) for fun! You can enter water parameters and see how the neural network calculates the pump pulses. Try it and see how it works!
