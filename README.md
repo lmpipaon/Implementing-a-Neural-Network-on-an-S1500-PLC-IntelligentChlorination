@@ -155,7 +155,7 @@ Once the neural network was implemented to regulate the pulse rate of the dosing
 
 The following graph illustrates the response to a step change from 0.7 to 1.0 ppm of free chlorine in the setpoint. We observe that with only the PID controller, the adjustment is slow and gradual toward the target. However, with the neural network combined with the PID controller in regulation, the only delay present is the contact time allowed between dosing and measurement to let the chlorine reaction take effect.
 ![SetpointChange_0.7_to_1.0](.images/SetpointChange.png)
-![treatment_plant_diagram](./images/treatment_plant_diagram.png)
+![treatment_plant_diagram](./images/SetpointChange.png)
 
 
 ## Future Steps
