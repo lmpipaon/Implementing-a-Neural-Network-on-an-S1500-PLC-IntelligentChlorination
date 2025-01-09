@@ -151,7 +151,6 @@ This ensures that the PID controller reacts only to actual deviations in the fre
 By combining the predictive capabilities of the neural network with the PID controller's fine-tuning adjustments and introducing delay compensation, the system achieves a more stable and efficient chlorine dosing process.
 
 # pp
-images/SetpointChange_0.7_to_1.0_Regulator.png
 ![SetpointChange_0.7_to_1.0](.images/SetpointChange_0.7_to_1.0_Regulator.png)
 # pp
 
