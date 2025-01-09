@@ -21,7 +21,9 @@ Although linear regression could be used for this task, a small neural network i
 
 
 ## The Treatment Plant
-![treatment_plant_diagram](./images/treatment_plant_diagram.png)
+<div align="center">
+<img src="./images/treatment_plant_diagram.png" width="60%">
+</div>
 
 The treatment process begins with the dosing of coagulant, followed by filtration of the water. After that, the water undergoes ultraviolet (UV) treatment, and finally, it is chlorinated.
 
@@ -80,7 +82,10 @@ The dataset file is located in the **data** folder under the name **water_treatm
 ## Neural Network Structure
 The chosen neural network architecture will be simple to facilitate easy implementation on a Siemens S1500 PLC. I will experiment with a hidden layer with 6 neurons using a ReLU activation function, which is straightforward to implement. The output layer will consist of a single neuron without an activation function, allowing for continuous output across the full range.
 
-![NeuralNetworkDiagram](./images/NeuralNetworkDiagram.png)
+<div align="center">
+<img src="./images/NeuralNetworkDiagram.png" width="60%">
+</div>
+
 
 
 ## Supervised Training of the Model
@@ -160,7 +165,7 @@ Once the neural network was implemented to regulate the pulse rate of the dosing
 
 The following graph illustrates the response to a step change from 0.7 to 1.0 ppm of free chlorine in the setpoint. We observe that with only the PID controller, the adjustment is slow and gradual toward the target. However, with the neural network combined with the PID controller in regulation, the only delay present is the contact time allowed between dosing and measurement to let the chlorine reaction take effect.
 <div align="center">
-<img src="./images/SetpointChange.png" width="70%">
+<img src="./images/SetpointChange.png" width="60%">
 </div>
 
 
