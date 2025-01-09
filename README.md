@@ -150,7 +150,7 @@ To prevent the PID controller from attempting to compensate for differences that
 This ensures that the PID controller reacts only to actual deviations in the free chlorine level, avoiding unnecessary oscillations and maintaining system stability.
 By combining the predictive capabilities of the neural network with the PID controller's fine-tuning adjustments and introducing delay compensation, the system achieves a more stable and efficient chlorine dosing process.
 
-## TESTING AND COMPARING REGULATION WITH AND WITHOUT THE NEURAL NETWORK
+## Testing and Comparing Regulation with and without the Neural Network
 Once the neural network was implemented to regulate the pulse rate of the dosing pumps, its performance was satisfactory, adapting well to the system. This reduced the reliance on the PID controller, which played a minimal role in the regulation process. After observing its operation over a prolonged period, I verified that the error consistently remained within a 2% range, matching the results predicted by the model.
 
 The following graph illustrates the response to a step change from 0.7 to 1.0 ppm of free chlorine in the setpoint. We observe that with only the PID controller, the adjustment is slow and gradual toward the target. However, with the neural network combined with the PID controller in regulation, the only delay present is the contact time allowed between dosing and measurement to let the chlorine reaction take effect.
