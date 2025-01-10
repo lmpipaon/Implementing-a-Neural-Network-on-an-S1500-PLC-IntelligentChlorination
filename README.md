@@ -181,6 +181,7 @@ The following graph illustrates the response to a step change from 0.7 to 1.0 pp
 
 ## Neural Network Output Simulator for Chlorine Dosing
 I made this interactive [web tool](https://lmpipaon.github.io/web/playing_NN.html) for fun! You can enter water parameters and see how the neural network calculates the pump pulses. Try it and see how it works!
+[web tool](https://lmpipaon.github.io/web/NN_online.html) 
 
 ## Sources
 ### Artificial Intelligence Tools:
