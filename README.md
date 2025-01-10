@@ -195,6 +195,8 @@ I made this interactive [web tool](https://lmpipaon.github.io/web/playing_NN.htm
 - [RingaTech YouTube Channel](https://www.youtube.com/@RingaTech)
 - [DotCSV YouTube Channel](https://www.youtube.com/@DotCSV)
 - ["Understanding Neural Networks" by DotCSV](https://www.youtube.com/watch?v=Icj2ey6TxEI)
+- ["PepeCantoralPhD YouTube Channel" by DotCSV](https://www.youtube.com/@PepeCantoralPhD)
+- ["santifiorino YouTube Channel" by DotCSV]https://www.youtube.com/@santifiorino
 
 ### Platforms and Resources:
 - [Google Colab](https://colab.research.google.com)
