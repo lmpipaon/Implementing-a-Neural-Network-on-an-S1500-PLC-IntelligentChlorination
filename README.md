@@ -182,3 +182,19 @@ The following graph illustrates the response to a step change from 0.7 to 1.0 pp
 ## Neural Network Output Simulator for Chlorine Dosing
 I made this interactive [web tool](https://lmpipaon.github.io/web/playing_NN.html) for fun! You can enter water parameters and see how the neural network calculates the pump pulses. Try it and see how it works!
 
+## Sources
+### Artificial Intelligence Tools:
+- [ChatGPT](https://chat.openai.com)
+- [GitHub Copilot](https://copilot.github.com)
+
+### Online Tutorials and Videos:
+- [RingaTech YouTube Channel](https://www.youtube.com/@RingaTech)
+- [DotCSV YouTube Channel](https://www.youtube.com/@DotCSV)
+- ["Understanding Neural Networks" by DotCSV](https://www.youtube.com/watch?v=Icj2ey6TxEI)
+
+### Platforms and Resources:
+- [Google Colab](https://colab.research.google.com)
+
+
+## Acknowledgment
+I am grateful for the resources and tools that supported me throughout this project. As English is not my native language, I did my best to write clearly but relied on AI tools like ChatGPT and GitHub Copilot, as well as educational content from YouTube channels such as RingaTech and DotCSV, to refine and improve my work. Their guidance and insights were invaluable.
